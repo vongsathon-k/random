@@ -43,7 +43,7 @@ body {
   overflow: hidden;
   @include flex-center;
 
-  @media #{$mobile} {
+  @include mobile {
     padding: 0 5%;
   }
 
@@ -74,7 +74,7 @@ body {
         'max(3.125rem, var(--safe-area-inset-right)) 0 max(3.125rem, var(--safe-area-inset-left))'
       );
 
-    @media #{$mobile} {
+    @include mobile {
       padding: 0
         unquote(
           'max(5%, var(--safe-area-inset-right)) 0 max(5%, var(--safe-area-inset-left))'

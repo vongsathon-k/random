@@ -15,11 +15,24 @@
   color: $color-title-border;
   display: inline-block;
 
-  @each $media-query, $factor in $scale-factors {
-    @media #{$media-query} {
-      max-width: $title-width * $factor;
-      margin: $title-margin-top 0 $title-margin-bottom * $factor 0;
-    }
+  @include medium-desktop {
+    max-width: $title-width * $medium-desktop-scale-factor;
+    margin: $title-margin-top 0 $title-margin-bottom * $medium-desktop-scale-factor 0;
+  }
+
+  @include small-desktop {
+    max-width: $title-width * $small-desktop-scale-factor;
+    margin: $title-margin-top 0 $title-margin-bottom * $small-desktop-scale-factor 0;
+  }
+
+  @include tablet {
+    max-width: $title-width * $tablet-scale-factor;
+    margin: $title-margin-top 0 $title-margin-bottom * $tablet-scale-factor 0;
+  }
+
+  @include mobile {
+    max-width: $title-width * $mobile-scale-factor;
+    margin: $title-margin-top 0 $title-margin-bottom * $mobile-scale-factor 0;
   }
 
   svg {
@@ -95,16 +108,47 @@
     border-bottom-left-radius: $slot-border-radius;
   }
 
-  @each $media-query, $factor in $scale-factors {
-    @media #{$media-query} {
-      width: $slot-width * $factor;
-      height: $slot-height * $factor;
-      margin: 0 auto;
+  @include medium-desktop {
+    width: $slot-width * $medium-desktop-scale-factor;
+    height: $slot-height * $medium-desktop-scale-factor;
+    margin: 0 auto;
 
-      &__outer {
-        transform: scale($factor);
-        transform-origin: top left;
-      }
+    &__outer {
+      transform: scale($medium-desktop-scale-factor);
+      transform-origin: top left;
+    }
+  }
+
+  @include small-desktop {
+    width: $slot-width * $small-desktop-scale-factor;
+    height: $slot-height * $small-desktop-scale-factor;
+    margin: 0 auto;
+
+    &__outer {
+      transform: scale($small-desktop-scale-factor);
+      transform-origin: top left;
+    }
+  }
+
+  @include tablet {
+    width: $slot-width * $tablet-scale-factor;
+    height: $slot-height * $tablet-scale-factor;
+    margin: 0 auto;
+
+    &__outer {
+      transform: scale($tablet-scale-factor);
+      transform-origin: top left;
+    }
+  }
+
+  @include mobile {
+    width: $slot-width * $mobile-scale-factor;
+    height: $slot-height * $mobile-scale-factor;
+    margin: 0 auto;
+
+    &__outer {
+      transform: scale($mobile-scale-factor);
+      transform-origin: top left;
     }
   }
 }
@@ -134,16 +178,44 @@
   position: relative;
   z-index: $z-index-draw-button; // make sure draw button on top of sunburst
 
-  @each $media-query, $factor in $scale-factors {
-    @media #{$media-query} {
-      width: $draw-button-width * $factor;
-      margin: $draw-button-margin-top * $factor 0 0;
-      font-size: max((1.75rem * $factor), 1rem);
-      line-height: max((1.75rem * $factor), 1rem);
-      padding: 1rem * $factor 0.625rem * $factor;
-      border-radius: 0.625rem * $factor;
-      @include shadow('large', $factor);
-    }
+  @include medium-desktop {
+    width: $draw-button-width * $medium-desktop-scale-factor;
+    margin: $draw-button-margin-top * $medium-desktop-scale-factor 0 0;
+    font-size: max((1.75rem * $medium-desktop-scale-factor), 1rem);
+    line-height: max((1.75rem * $medium-desktop-scale-factor), 1rem);
+    padding: 1rem * $medium-desktop-scale-factor 0.625rem * $medium-desktop-scale-factor;
+    border-radius: 0.625rem * $medium-desktop-scale-factor;
+    @include shadow('large', $medium-desktop-scale-factor);
+  }
+
+  @include small-desktop {
+    width: $draw-button-width * $small-desktop-scale-factor;
+    margin: $draw-button-margin-top * $small-desktop-scale-factor 0 0;
+    font-size: max((1.75rem * $small-desktop-scale-factor), 1rem);
+    line-height: max((1.75rem * $small-desktop-scale-factor), 1rem);
+    padding: 1rem * $small-desktop-scale-factor 0.625rem * $small-desktop-scale-factor;
+    border-radius: 0.625rem * $small-desktop-scale-factor;
+    @include shadow('large', $small-desktop-scale-factor);
+  }
+
+  @include tablet {
+    width: $draw-button-width * $tablet-scale-factor;
+    margin: $draw-button-margin-top * $tablet-scale-factor 0 0;
+    font-size: max((1.75rem * $tablet-scale-factor), 1rem);
+    line-height: max((1.75rem * $tablet-scale-factor), 1rem);
+    padding: 1rem * $tablet-scale-factor 0.625rem * $tablet-scale-factor;
+    border-radius: 0.625rem * $tablet-scale-factor;
+    @include shadow('large', $tablet-scale-factor);
+  }
+
+  @include mobile {
+    width: $draw-button-width * $mobile-scale-factor;
+    margin: $draw-button-margin-top * $mobile-scale-factor 0 0;
+    font-size: max((1.75rem * $mobile-scale-factor), 1rem);
+    line-height: max((1.75rem * $mobile-scale-factor), 1rem);
+    padding: 1rem * $mobile-scale-factor 0.625rem * $mobile-scale-factor;
+    border-radius: 0.625rem * $mobile-scale-factor;
+    @include shadow('large', $mobile-scale-factor);
   }
 }
 
@@ -179,7 +251,7 @@
       padding-bottom: 3.125rem;
     }
 
-    @media #{$mobile} {
+    @include mobile {
       padding: 10% 10% 0 10%;
 
       &__group:last-child {
