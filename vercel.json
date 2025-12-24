@@ -15,7 +15,7 @@
       "dest": "/$1"
     }
   ],
-  "installCommand": "npm install --legacy-peer-deps",
+  "installCommand": "npm install --legacy-peer-deps --omit=optional",
   "buildCommand": "npm run build",
   "framework": null
 }
