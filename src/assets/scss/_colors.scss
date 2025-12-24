@@ -4,11 +4,13 @@ $color-mid-grey: #999999;
 $color-dark-grey: #666666;
 $color-black: #000000;
 
-$color-red-step1: #f0ebe1;
-$color-red-step2: #e8e3d9;
-$color-red-step3: #ddd8ce;
-$color-red-step4: #d2cdc3;
-$color-red-step5: #c7c2b8;
+$color-red-step1: #fef9e7;
+$color-red-step2: #fdf6db;
+$color-red-step3: #fcf3cf;
+$color-red-step4: #fbedc4;
+$color-red-step5: #fae6b8;
+
+$color-peach: #f4a682;
 
 $color-yellow: #ffbf1f;
 $color-blood-orange: #e54c23;
@@ -31,7 +33,7 @@ $color-button-danger-background: $color-blood-orange;
 $color-button-danger-hover-background: lighten($color-blood-orange, 5%);
 
 // slot
-$color-slot-background: $color-dark-grey;
+$color-slot-background: $color-peach;
 $color-slot-shadow: $color-shadow;
 $color-slot-inner-background: $color-white;
 $color-slot-text: $color-black;
